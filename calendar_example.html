@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Calendar.js/dist/calendar.js.css" />
+  <script src="Calendar.js/dist/calendar.js"></script>
+</head>
+<body>
+
+<div id="calendar"></div>
+
+<script>
+  var calendarInstance = new calendarJs("calendar", {
+    manualEditingEnabled: true
+    // Other options can be set here
+  });
+
+  calendarInstance.setOptions({
+    manualEditingEnabled: false,
+    views: {
+      fullMonth: {
+        maximumEventsPerDayDisplay: 0
+      }
+    },
+    visibleDays: [0, 1, 2, 3, 4]
+  });
+
+  var event = {
+    from: new Date(),
+    to: new Date(),
+    title: "A New Event",
+    description: "A description of the event"
+  };
+
+  calendarInstance.addEvent(event);
+</script>
+
+</body>
+</html>
+
